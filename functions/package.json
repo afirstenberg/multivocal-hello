@@ -1,6 +1,7 @@
 {
-  "name": "functions",
-  "description": "Cloud Functions for Firebase",
+  "name": "multivocal-hello",
+  "description": "Hello World sample for multivocal library",
+  "version": "1.0.0",
   "scripts": {
     "serve": "firebase serve --only functions",
     "shell": "firebase experimental:functions:shell",
