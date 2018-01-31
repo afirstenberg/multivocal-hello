@@ -1,6 +1,6 @@
 const functions = require('firebase-functions');
 
-const Config = require('multivocal/src/config-simple')({
+const Config = require('multivocal/lib/config-simple')({
   Local: {
     und: {
       Response: {
