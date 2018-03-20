@@ -1,12 +1,14 @@
-const functions = require('firebase-functions');
+const Multivocal = require('multivocal');
 
-const Config = require('multivocal/lib/config-simple')({
+new Multivocal.Config.Simple({
   Local: {
     und: {
       Response: {
-        Default: [
+        "Action.multivocal.welcome": [
           {
-            Template: "Hello World.",
+            Template: {
+              Text: "Hello world."
+            },
             ShouldClose: true
           }
         ]
@@ -15,9 +17,7 @@ const Config = require('multivocal/lib/config-simple')({
   }
 });
 
-const Multivocal = require('multivocal');
-Multivocal.setConfig( Config );
-
+const functions = require('firebase-functions');
 exports.webhook = functions.https.onRequest( (req,res) => {
     Multivocal.process( req, res );
 });
