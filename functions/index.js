@@ -17,7 +17,7 @@ new Multivocal.Config.Simple({
   }
 });
 
-const functions = require('firebase-functions');
-exports.webhook = functions.https.onRequest( (req,res) => {
-    Multivocal.process( req, res );
-});
+//new Multivocal.Config.Firebase();
+//new Multivocal.Config.Firestore();
+
+exports.webhook = Multivocal.processFirebaseWebhook;
